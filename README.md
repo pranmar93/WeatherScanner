@@ -3,10 +3,10 @@
 This is a small lightweight app for weather updates.
 
 ## Functionality
-  - Get Current Weather Updates in rich text form
-  - Get Weather forecast for Next 4 days
-  - Mark locations as Favourite
-  - Get Weather forecast for different locations
+  - Get Current Weather Updates in rich text form.
+  - Get Weather forecast for Next 4 days.
+  - Mark locations as favourite for easy access.
+  - Get Weather forecast for different locations.
   - Auto update functionality with different time intervals.
   - View Weather updates in different metrics.
   - In case of network failure, cached response is displayed.
