@@ -9,7 +9,7 @@ This is a small lightweight app for weather updates.
   - Get Weather forecast for different locations
   - Auto update functionality with different time intervals.
   - View Weather updates in different metrics.
-  - In case of network failure, cached respose is displayed.
+  - In case of network failure, cached response is displayed.
   
 ## Steps to follow
   1. Open the application.
