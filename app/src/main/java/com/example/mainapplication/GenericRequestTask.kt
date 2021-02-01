@@ -213,7 +213,6 @@ abstract class GenericRequestTask(
         return URL(urlBuilder.toString())
     }
 
-    @SuppressLint("ApplySharedPref")
     private fun restorePreviousCity() {
         if (!TextUtils.isEmpty(activity.recentCityId)) {
             sharedRepository.setCityID(activity.recentCityId!!)
