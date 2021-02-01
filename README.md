@@ -7,6 +7,7 @@ This is a small lightweight app for weather updates.
   - Get Weather forecast for Next 4 days
   - Mark locations as Favourite
   - Get Weather forecast for different locations
+  - Auto update functionality
   - In case of network failure, cached respose is displayed.
   
 ## Steps to follow
