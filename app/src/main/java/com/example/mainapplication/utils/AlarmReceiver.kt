@@ -58,8 +58,7 @@ class AlarmReceiver : BroadcastReceiver() {
             getWeather()
         }
     }
-
-    // This method calls the two methods below once it has determined a location
+    
     private fun getWeather() {
             Log.d("Alarm", "Recurring alarm; requesting download service.")
             val failed: Boolean
