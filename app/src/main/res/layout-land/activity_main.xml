@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/viewApp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:titleTextAppearance="@style/ToolbarTitle"
+                android:background="?attr/colorPrimary"
+                app:navigationIcon="@drawable/ic_location_30dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:paddingTop="?attr/actionBarSize">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/todayTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="0 °C"
+                        android:textColor="@color/text_light"
+                        android:textSize="36sp"/>
+
+                    <TextView
+                        android:id="@+id/todayDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="No data"
+                        android:textColor="@color/text_light"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/todayWind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        tools:text="Wind: 0 m/s"
+                        android:textColor="@color/text_light"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/todayPressure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Pressure: 0 hpa"
+                        android:textColor="@color/text_light"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/todayHumidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Humidity: 0 %"
+                        android:textColor="@color/text_light"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/todaySunrise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Sunrise: 00:00"
+                        android:textColor="@color/text_light"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/todaySunset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Sunset: 00:00"
+                        android:textColor="@color/text_light"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/todayIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|end"
+                        android:gravity="center"
+                        android:paddingRight="42dp"
+                        android:textColor="@color/text_light"
+                        android:text=""
+                        android:textSize="72sp"/>
+
+                    <ToggleButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/button_favourite"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="end"
+                        android:textOff=""
+                        android:textOn=""
+                        android:background="@android:color/transparent"/>
+
+                    <TextView
+                        android:id="@+id/lastUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom|end"
+                        android:gravity="bottom|end"
+                        android:paddingRight="16dp"
+                        android:textAlignment="viewEnd"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="?attr/actionBarSize"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/tab_indicator"
+                app:tabMode="fixed"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/loading_progress_overlay"
+        android:id="@+id/progress_homepage"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
